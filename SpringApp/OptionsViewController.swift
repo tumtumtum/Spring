@@ -107,19 +107,19 @@ class OptionsViewController: UIViewController {
         delegate?.resetButtonPressed(sender)
         dismissViewControllerAnimated(true, completion: nil)
         
-        UIApplication.sharedApplication().sendAction("maximizeView:", to: nil, from: self, forEvent: nil)
+        UIApplication.sharedApplication().sendAction(Selector("maximizeView:"), to: nil, from: self, forEvent: nil)
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         
-        UIApplication.sharedApplication().sendAction("maximizeView:", to: nil, from: self, forEvent: nil)
+        UIApplication.sharedApplication().sendAction(Selector("maximizeView:"), to: nil, from: self, forEvent: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        UIApplication.sharedApplication().sendAction("minimizeView:", to: nil, from: self, forEvent: nil)
+        UIApplication.sharedApplication().sendAction(Selector("minimizeView:"), to: nil, from: self, forEvent: nil)
         
         modalView.animate()
     }
